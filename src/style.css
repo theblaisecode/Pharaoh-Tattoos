@@ -1,0 +1,549 @@
+:root {
+  --bg: #1e1e1e;
+  --bgModal: #1e1e1e11;
+  --primary: #d68f07;
+  --nav: #ffb11b;
+  --faq: #c7860b;
+  --artistName: rgba(214, 143, 7, 0.5);
+  --textLight: #ffffff;
+  --textGrey: #929292;
+  --darkLinearGradient: linear-gradient(
+    to right,
+    #1e1e1e 0%,
+    #292929 52%,
+    #1e1e1e 85%
+  );
+  --darkLinearGradient2: linear-gradient(
+    to right,
+    #1e1e1e 0%,
+    #292929 52%,
+    #1e1e1e 100%
+  );
+  --yellowLinearGradient2: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    #d68e0713 10%,
+    #d68e0723 40%,
+    #bf8003c4 82%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--primary) #000000; /* For Firefox */
+  border-radius: 0.5rem;
+}
+
+/* For Webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark); /* Darker shade on hover */
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--bg);
+  color: var(--textLight);
+  overflow-x: hidden;
+  cursor: url("./img/cursor3.png"), auto;
+}
+
+/* Additional cursor styles for specific elements */
+a,
+button,
+input[type="submit"],
+.clickable {
+  cursor: pointer;
+}
+
+/* Fallback for browser compatibility */
+@supports not (cursor: url("./img/cursor3.png"), auto) {
+  body {
+    cursor: default;
+  }
+  a,
+  button,
+  input[type="submit"],
+  .clickable {
+    cursor: pointer;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+a {
+  color: var(--textLight);
+  text-decoration: none;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Ensure the header is above other content */
+}
+
+.headerContent,
+.allLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.allLink {
+  justify-content: flex-end;
+  width: 100%;
+  gap: 18%;
+  padding: 0;
+}
+
+nav,
+.social {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+nav {
+  gap: 6rem;
+}
+
+nav a {
+  color: var(--textGrey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  position: relative;
+  transition: font-size 0.4s ease, transform 0.4s ease;
+}
+
+nav a:hover,
+nav a.activeStyle {
+  font-size: calc(1.6rem + 0.2rem);
+  transform: translateY(-2px);
+  color: var(--textLight);
+}
+
+nav a::after,
+nav a.activeStyle::after {
+  content: "";
+  margin-top: 0.5rem;
+  width: 0;
+  height: 0.3rem;
+  background: var(--nav);
+  border-radius: 5rem;
+  transition: width 0.4s ease;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav a:hover::after,
+nav a.activeStyle::after {
+  width: 3rem;
+}
+
+.headerContent .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.headerContent .contact .btn {
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+}
+
+.headerContent .contact .btn span {
+  padding: 0.3rem;
+}
+
+.headerContent .contact .btn span svg {
+  font-size: 1rem;
+}
+
+.social a {
+  color: var(--primary);
+  transition: 0.4s;
+  font-size: 1.6rem;
+  padding-top: 0.8rem;
+}
+
+.social a:hover {
+  color: var(--nav);
+  /* font-size: calc(2rem + 0.2rem);
+  transform: translateY(-2px); */
+  transition: all 0.4s;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: auto;
+  align-self: flex-start;
+  padding: 1.2rem 2rem;
+  background: none;
+  border: 0.1rem solid var(--primary);
+  color: var(--textLight);
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  transition: 0.4s;
+}
+
+.btn:hover,
+.activeBtn {
+  background-color: var(--nav);
+  transition: all 0.4s;
+}
+
+.btn span {
+  font-size: 1.5rem;
+  background: var(--nav);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.btn span svg {
+  color: var(--textLight);
+}
+/* -------- Mobile Nav -------- */
+.mobileNav {
+  display: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.mobileNav svg {
+  transition: 0.4s;
+}
+
+.mobileNav svg.mobileActive {
+  transition: all 0.4s;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 1.8rem;
+  letter-spacing: 2%;
+  line-height: 3.5rem;
+  margin-bottom: 3rem;
+}
+
+.bgText {
+  font-size: 17.5rem;
+  font-weight: 750;
+  display: block;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--artistName);
+  text-stroke: 1px var(--artistName);
+}
+
+.head {
+  font-weight: 600;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.head2 {
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+textarea {
+  resize: none;
+  height: 20rem;
+  width: 100%;
+}
+
+footer {
+  padding: 3rem 0 7rem 0;
+}
+
+.footerContent .social a {
+  font-size: 2.5rem;
+}
+
+.footerContent .social a:hover {
+  transform: none;
+}
+
+.footerContent .contentTop svg {
+  margin-top: 3rem;
+  font-size: 2.5rem;
+}
+
+.footerContent,
+.footerContent .contentBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+}
+
+.footerContent .contentBottom .title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footerContent .contentBottom .details {
+  font-size: 1.3rem;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.footerContent .contentBottom .details p {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerContent .contentBottom .details .btn,
+.artStyles .btn,
+.appointmentContent .btn {
+  font-size: 1.6rem;
+}
+
+.footerContent .contentBottom .details .btn span,
+.artStyles .btn span,
+.appointmentContent .btn span {
+  font-size: 1.2rem;
+  background: var(--nav);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+@media screen and (max-width: 950px), screen and (max-height: 550px) {
+  .container {
+    width: 95%;
+  }
+
+  .mobileNav {
+    z-index: 3;
+    display: block;
+  }
+
+  .mobileActive {
+    color: var(--primary);
+  }
+
+  nav {
+    gap: 2.5rem;
+  }
+
+  nav a::after,
+  nav a.activeStyle::after {
+    left: 25%;
+  }
+
+  .allLink {
+    flex-direction: column;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: var(--bg);
+    padding: 3rem;
+    height: 100vh;
+    width: 55%;
+    transition: 0.4s;
+  }
+
+  .allLink.active {
+    right: 0;
+    transition: all 0.4s;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 1rem 1rem 1rem 0;
+  }
+
+  .headerContent .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .bgText {
+    font-size: 5.5rem;
+  }
+
+  .head {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  .btn {
+    padding: 1rem 1.7rem;
+    font-size: 1.7rem;
+  }
+
+  .footerContent,
+  .footerContent {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+  }
+  .footerContent .contentTop,
+  .footerContent .contentBottom {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footerContent .contentBottom .details {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 950px) {
+  .bgText {
+    font-size: 11rem;
+  }
+
+  .head {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 951px) and (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+
+  .bgText {
+    font-size: 13rem;
+  }
+
+  .headerContent {
+    gap: 2rem;
+  }
+
+  .headerContent .logo {
+    width: 28%;
+  }
+
+  .headerContent .logo img {
+    width: 70%;
+    padding-top: 1rem;
+  }
+
+  nav a {
+    font-size: calc(1.3rem + 0.2rem);
+  }
+
+  nav a:hover,
+  nav a.activeStyle {
+    font-size: calc(1.3rem + 0.2rem);
+  }
+
+  .headerContent .contact {
+    gap: 1.5rem;
+  }
+
+  .social {
+    gap: 2rem;
+  }
+
+  .allLink {
+    gap: 6rem;
+  }
+
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .footerContent .social {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 951px) and (max-width: 1003px) {
+  nav {
+    gap: 4.5rem;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .container {
+    width: 90%;
+  }
+
+  .allLink {
+    gap: 8rem;
+  }
+
+  .bgText {
+    font-size: 15rem;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1628px) {
+  .container {
+    width: 85%;
+  }
+
+  .bgText {
+    font-size: 15rem;
+  }
+}
