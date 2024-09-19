@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Gallery from "./pages/Gallery/Gallery";
 import Aftercare from "./pages/Aftercare/Aftercare";
@@ -20,7 +20,7 @@ function App() {
     setAppointmentType,
   } = useGlobalContext();
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
