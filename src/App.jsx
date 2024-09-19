@@ -20,47 +20,52 @@ function App() {
     setAppointmentType,
   } = useGlobalContext();
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout />,
-      children: [
-        {
-          index: true,
-          element: <Home isToggle={isToggle} toggleQuestion={toggleQuestion} />,
-        },
-        {
-          path: "gallery",
-          element: (
-            <Gallery
-              isModal={isModal}
-              toggleModal={toggleModal}
-              imgModal={imgModal}
-              toggleImgModal={toggleImgModal}
-            />
-          ),
-        },
-        {
-          path: "aftercare",
-          element: <Aftercare />,
-        },
-        {
-          path: "contact",
-          element: <Contact />,
-        },
-        {
-          path: "appointment",
-          element: (
-            <Appointment
-              appointmentType={appointmentType}
-              setAppointmentType={setAppointmentType}
-            />
-          ),
-          action: bookAppointment,
-        },
-      ],
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <Layout />,
+        children: [
+          {
+            index: true,
+            element: (
+              <Home isToggle={isToggle} toggleQuestion={toggleQuestion} />
+            ),
+          },
+          {
+            path: "gallery",
+            element: (
+              <Gallery
+                isModal={isModal}
+                toggleModal={toggleModal}
+                imgModal={imgModal}
+                toggleImgModal={toggleImgModal}
+              />
+            ),
+          },
+          {
+            path: "aftercare",
+            element: <Aftercare />,
+          },
+          {
+            path: "contact",
+            element: <Contact />,
+          },
+          {
+            path: "appointment",
+            element: (
+              <Appointment
+                appointmentType={appointmentType}
+                setAppointmentType={setAppointmentType}
+              />
+            ),
+            action: bookAppointment,
+          },
+        ],
+      },
+    ],
+    { basename: "/Pharaoh-Tattoos" }
+  );
 
   return <RouterProvider router={router} />;
 }
