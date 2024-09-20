@@ -22,8 +22,6 @@ function ContactForm({ sectionHead, sectionDescription }) {
       .then(
         (result) => {
           toast.success("Email sent!", {
-            position: "top-right",
-            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -37,8 +35,6 @@ function ContactForm({ sectionHead, sectionDescription }) {
         (error) => {
           console.error("Error sending email:", error.text); // Log the error
           toast.error("Failed to send email. Please try again.", {
-            position: "top-right",
-            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
