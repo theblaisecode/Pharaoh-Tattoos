@@ -4,10 +4,13 @@ import GlobalContext from "./GlobalContext.jsx";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 createRoot(document.getElementById("root")).render(
   <GlobalContext>
+    <ToastContainer position="top-center" autoClose={2000} />
     <App />
   </GlobalContext>
 );

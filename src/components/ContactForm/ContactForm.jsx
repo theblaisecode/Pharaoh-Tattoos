@@ -5,6 +5,7 @@ import { HiPaintBrush } from "react-icons/hi2";
 import ContactFormWrapper from "./ContactFormWrapper";
 import Button from "../Button";
 import { Form } from "react-router-dom";
+import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
 
 function ContactForm({ sectionHead, sectionDescription }) {
@@ -20,15 +21,34 @@ function ContactForm({ sectionHead, sectionDescription }) {
       )
       .then(
         (result) => {
-          alert("Email successfully sent to the user!");
+          toast.warn("Email sent!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: "Bounce",
+          });
+          e.target.reset(); // Reset only after successful send
         },
         (error) => {
-          console.error(error.text);
-          alert("Failed to send email. Please try again.");
+          console.error("Error sending email:", error.text); // Log the error
+          toast.error("Failed to send email. Please try again.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: "Bounce",
+          });
         }
       );
-
-    e.target.reset(); 
   };
 
   return (
