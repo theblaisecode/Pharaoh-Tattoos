@@ -23,29 +23,29 @@ function ContactForm({ sectionHead, sectionDescription }) {
         (result) => {
           toast.success("Email sent!", {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "colored",
-            transition: "Bounce",
+            transition: Bounce,
           });
-          e.target.reset(); // Reset only after successful send
+          e.target.reset(); 
         },
         (error) => {
           console.error("Error sending email:", error.text); // Log the error
           toast.error("Failed to send email. Please try again.", {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "colored",
-            transition: "Bounce",
+            transition: Bounce,
           });
         }
       );
