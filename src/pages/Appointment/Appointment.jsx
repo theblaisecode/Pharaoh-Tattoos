@@ -17,40 +17,20 @@ function Appointment({ appointmentType, setAppointmentType }) {
 
     emailjs
       .sendForm(
-        "service_eqa2bwo", // Your EmailJS service ID
-        "template_appointment", // Your new EmailJS appointment template ID
+        "service_eqa2bwo",
+        "template_mbvrxcj",
         e.target,
-        "ykYQxpSvmEm_6kHaM" // Your EmailJS user ID
+        "ykYQxpSvmEm_6kHaM"
       )
       .then(
         (result) => {
-          toast.success("Appointment request sent!", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
+          toast.success("Appointment request sent!", {});
+          e.target.reset();
         },
         (error) => {
-          console.error("Error sending appointment email:", error.text);
-          toast.error("Failed to send appointment request. Please try again.", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
+          toast.error("Appointment failed. Please try again.", {});
         }
       );
-
-    e.target.reset();
   };
 
   return (
@@ -200,9 +180,19 @@ function Appointment({ appointmentType, setAppointmentType }) {
                   <div className="clientDetails">
                     <div className="reference">
                       <label htmlFor="reference">
-                        Link to reference image :<span> If any</span>
+                        Link to reference image :
+                        <span>
+                          {" "}
+                          If any - Preferably a Google Drive link. Must be
+                          publicly accessible.
+                        </span>
                       </label>
-                      <input type="text" name="reference" id="reference" />
+                      <input
+                        type="text"
+                        name="reference"
+                        id="reference"
+                        placeholder="https://drive.google.com/file/d/..."
+                      />
                     </div>
                   </div>
 

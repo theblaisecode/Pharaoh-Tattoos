@@ -105,7 +105,13 @@ const AppointmentWrapper = styled.div`
 
   .appointmentContent .contentBottom span {
     color: var(--textGrey);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+
+  .appointmentContent .contentBottom input::placeholder {
+    font-style: italic;
+    color: #ffffff85;
   }
 
   .appointmentContent .contentBottom textarea {

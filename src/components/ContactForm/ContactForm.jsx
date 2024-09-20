@@ -21,28 +21,11 @@ function ContactForm({ sectionHead, sectionDescription }) {
       )
       .then(
         (result) => {
-          toast.success("Email sent!", {
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Bounce,
-          });
-          e.target.reset(); 
+          toast.success("Email sent!", {});
+          e.target.reset();
         },
         (error) => {
-          console.error("Error sending email:", error.text); // Log the error
-          toast.error("Failed to send email. Please try again.", {
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Bounce,
-          });
+          toast.error("Failed to send email. Please try again.", {});
         }
       );
   };
