@@ -294,7 +294,7 @@ textarea {
   width: 100%;
 }
 
-footer {
+#footer {
   padding: 3rem 0 7rem 0;
 }
 
@@ -355,6 +355,40 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
+}
+
+#subFooter {
+  background: #0000004f;
+}
+
+.subFooterContent {
+  margin-top: 4rem;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subFooterContent .authors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.subFooterContent .authors a {
+  color: var(--primary);
+  /* text-decoration: underline; */
+  padding-bottom: 0.1rem;
+  padding-left: 0.4rem;
+  border-bottom: 0.1rem solid var(--primary);
+}
+
+.subFooterContent .divide {
+  height: 4rem;
+  width: 0.2rem;
+  background: var(--textGrey);
 }
 
 @media screen and (max-width: 950px), screen and (max-height: 550px) {
@@ -452,6 +486,17 @@ footer {
   .footerContent .contentBottom .details {
     justify-content: center;
     align-items: center;
+  }
+
+  .subFooterContent {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .subFooterContent .divide {
+    width: 0.2rem;
+    height: 4rem;
   }
 }
 
