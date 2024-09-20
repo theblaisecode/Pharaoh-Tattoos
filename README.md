@@ -1,7 +1,7 @@
-# Tattoo & Piercing Studio
+# Pharaoh Tattoos
 A modern and fully responsive website for a tattoo and piercing studio, built with React JS. This project features functional contact and appointment forms, ensuring seamless booking and communication for clients. The application is designed with a focus on user experience and includes animations, responsive galleries, and email confirmation for appointment bookings.
 
-**Live Website** - [Link to Your Website](https://your-live-link)
+**Live Website** - https://theblaisecode.github.io/Pharaoh-Tattoos/
 
 ## 🚀 Features
 - **Responsive Design:** Optimized for a flawless experience across all devices, from mobile to desktop.
@@ -12,7 +12,8 @@ A modern and fully responsive website for a tattoo and piercing studio, built wi
 - **React Toastify:** Instant and beautiful notifications enhance the user experience.
 
 ## 🖼️ Preview
-![tattoo-piercing-preview](https://your-image-link)
+![Pharaoh Tattoos](https://github.com/user-attachments/assets/d00be318-d30f-4ec0-8e57-0d56090479c9)
+
 
 ## 🔧 Tech Stack
 - **React JS:** A JavaScript library for building dynamic user interfaces.
