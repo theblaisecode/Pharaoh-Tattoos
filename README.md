@@ -30,8 +30,8 @@ A modern and fully responsive website for a tattoo and piercing studio, built wi
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-github/tattoo-piercing-studio.git
-cd tattoo-piercing-studio
+git clone https://github.com/theblaisecode/Pharaoh-Tattoos.git
+cd Pharaoh-Tattoos
 npm install
 ```
 
