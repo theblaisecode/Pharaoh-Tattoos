@@ -67,10 +67,9 @@ body {
   background: var(--bg);
   color: var(--textLight);
   overflow-x: hidden;
-  cursor: url("./img/cursor3.webp"), auto;
+  /* cursor: url("./img/cursor3.webp"), auto; */
 }
 
-/* Additional cursor styles for specific elements */
 a,
 button,
 input[type="submit"],
@@ -79,7 +78,7 @@ input[type="submit"],
 }
 
 /* Fallback for browser compatibility */
-@supports not (cursor: url("./img/cursor3.webp"), auto) {
+/* @supports not (cursor: url("./img/cursor3.webp"), auto) {
   body {
     cursor: default;
   }
@@ -89,7 +88,7 @@ input[type="submit"],
   .clickable {
     cursor: pointer;
   }
-}
+} */
 
 .container {
   margin: 0 auto;
