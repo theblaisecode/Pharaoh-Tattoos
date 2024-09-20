@@ -75,6 +75,7 @@ function Appointment({ appointmentType, setAppointmentType }) {
                           type="text"
                           name="countryCode"
                           id="countryCode"
+                          required
                           style={{ width: "9rem" }}
                         />
 
