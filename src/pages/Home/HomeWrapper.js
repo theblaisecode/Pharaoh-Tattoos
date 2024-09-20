@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import homeHeroImg from "../../img/home/homeHero.png";
+import homeHeroImg from "../../img/home/homeHero.webp";
 
 const HomeWrapper = styled.div`
   /* ------------ Hero ------------ */

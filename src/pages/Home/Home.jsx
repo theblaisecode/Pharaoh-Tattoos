@@ -7,7 +7,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import heroAboutImage from "../../img/home/heroAbt.png";
+import heroAboutImage from "../../img/home/heroAbt.webp";
 import HomeWrapper from "./HomeWrapper";
 
 function Home({ isToggle, toggleQuestion }) {

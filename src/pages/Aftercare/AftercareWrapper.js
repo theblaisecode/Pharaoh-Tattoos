@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import aftercareHero from "../../img/aftercare/aftercareHero.png";
-import piercingAftercareHero from "../../img/aftercare/aftercareHero2.png";
+import aftercareHero from "../../img/aftercare/aftercareHero.webp";
+import piercingAftercareHero from "../../img/aftercare/aftercareHero2.webp";
 
 const AftercareWrapper = styled.div`
   margin-bottom: 10rem;

@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom";
 import { FaAngleRight } from "react-icons/fa6";
 import HeadingTop from "../../components/HeadingTop";
-import formImage from "../../img/appointment/formImage.png";
+import formImage from "../../img/appointment/formImage.webp";
 import { tattooOptions, piercingOptions, artist } from "../../data";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";

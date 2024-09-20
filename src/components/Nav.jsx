@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { navIcon } from "../data";
 import { FaAngleRight, FaXmark, FaBarsStaggered } from "react-icons/fa6";
-import logo from "../img/logo.png";
+import logo from "../img/logo.webp";
 
 function Nav() {
   const [isMobile, setIsMobile] = useState(false);

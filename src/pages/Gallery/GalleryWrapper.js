@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import galleryHero from "../../img/gallery/galleryHero.png";
-import piercingsHero from "../../img/gallery/piercingHero.png";
+import galleryHero from "../../img/gallery/galleryHero.webp";
+import piercingsHero from "../../img/gallery/piercingHero.webp";
 
 const GalleryWrapper = styled.div`
   #galleryHero {
