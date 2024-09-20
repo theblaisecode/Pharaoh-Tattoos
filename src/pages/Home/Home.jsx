@@ -66,12 +66,12 @@ function Home({ isToggle, toggleQuestion }) {
                 personal.
               </p>
 
-              <Link to="/about" className="btn">
+              {/* <Link to="/about" className="btn">
                 Learn More
                 <span>
                   <FaAngleRight />
                 </span>
-              </Link>
+              </Link> */}
             </div>
 
             <div className="contentBottom">
