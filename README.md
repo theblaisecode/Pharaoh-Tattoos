@@ -1,8 +1,57 @@
-# React + Vite
+# Pharaoh Tattoos
+A modern and fully responsive website for a tattoo and piercing studio, built with React JS. This project features functional contact and appointment forms, ensuring seamless booking and communication for clients. The application is designed with a focus on user experience and includes animations, responsive galleries, and email confirmation for appointment bookings.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Website** - https://theblaisecode.github.io/Pharaoh-Tattoos/
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Responsive Design:** Optimized for a flawless experience across all devices, from mobile to desktop.
+- **Appointment Form:** Book appointments with ease through the integrated form, featuring email confirmation sent directly to the client.
+- **Contact Form:** Users can reach out directly via the responsive contact form.
+- **Swiper JS Gallery:** Browse stunning tattoo and piercing galleries with Swiper animations.
+- **Clean UI:** Stylish and intuitive interface built with Styled Components.
+- **React Toastify:** Instant and beautiful notifications enhance the user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖼️ Preview
+![Pharaoh Tattoos](https://github.com/user-attachments/assets/d00be318-d30f-4ec0-8e57-0d56090479c9)
+
+
+## 🔧 Tech Stack
+- **React JS:** A JavaScript library for building dynamic user interfaces.
+- **React Router:** Seamless navigation between pages.
+- **Styled Components:** CSS-in-JS for modular and maintainable styling.
+- **EmailJS:** Send emails directly from the form without needing a backend.
+- **React Toastify:** Elegant notifications for smooth interaction.
+- **Swiper JS:** Animated image sliders for showcasing galleries.
+- **React Icons:** Access to a wide range of icons to enhance the visual design.
+
+## 📚 Documentation
+
+### Installation 
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/your-github/tattoo-piercing-studio.git
+cd tattoo-piercing-studio
+npm install
+```
+
+**Running the App**<br/>
+Start the development server:
+
+```bas
+npm run dev
+```
+
+Build the project for production:
+```bash
+Copy code
+npm run build
+```
+
+<br/>
+
+## 👥 Authors
+- GitHub - [@theblaisecode](https://github.com/theblaisecode)
+- Twitter - [@theblaisecode](https://twitter.com/theblaisecode)
+- LinkedIn - [@theblaisecode](https://www.linkedin.com/in/theblaisecode)
+- Portfolio - [theblaisecode.netlify.app](https://theblaisecode.netlify.app/)
