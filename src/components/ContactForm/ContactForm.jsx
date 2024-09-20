@@ -21,7 +21,7 @@ function ContactForm({ sectionHead, sectionDescription }) {
       )
       .then(
         (result) => {
-          toast.warn("Email sent!", {
+          toast.success("Email sent!", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
