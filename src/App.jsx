@@ -58,8 +58,7 @@ function App() {
                 appointmentType={appointmentType}
                 setAppointmentType={setAppointmentType}
               />
-            ),
-            action: bookAppointment,
+            )
           },
         ],
       },

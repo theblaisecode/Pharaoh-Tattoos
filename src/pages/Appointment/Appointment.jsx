@@ -3,12 +3,55 @@ import { FaAngleRight } from "react-icons/fa6";
 import HeadingTop from "../../components/HeadingTop";
 import formImage from "../../img/appointment/formImage.png";
 import { tattooOptions, piercingOptions, artist } from "../../data";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 import AppointmentWrapper from "./AppointmentWrapper";
 
 function Appointment({ appointmentType, setAppointmentType }) {
   const head = "Booking Form";
   const description =
     "Thank you for your interest. If you do not have a link to the reference pictures, please send an email to pharaohtattoos@gmail.com, attaching the reference pictures after completing the form.";
+
+  const sendAppointmentEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_eqa2bwo", // Your EmailJS service ID
+        "template_appointment", // Your new EmailJS appointment template ID
+        e.target,
+        "ykYQxpSvmEm_6kHaM" // Your EmailJS user ID
+      )
+      .then(
+        (result) => {
+          toast.success("Appointment request sent!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        },
+        (error) => {
+          console.error("Error sending appointment email:", error.text);
+          toast.error("Failed to send appointment request. Please try again.", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+        }
+      );
+
+    e.target.reset();
+  };
 
   return (
     <AppointmentWrapper>
@@ -31,16 +74,16 @@ function Appointment({ appointmentType, setAppointmentType }) {
                   />
                 </div>
 
-                <Form method="POST" action="/appointment">
+                <Form method="POST" onSubmit={sendAppointmentEmail}>
                   <div className="clientDetails">
                     <div className="firstName">
                       <label htmlFor="fname">First Name</label>
-                      <input type="text" name="fname" id="fname" />
+                      <input type="text" name="fname" id="fname" required />
                     </div>
 
                     <div className="lastName">
                       <label htmlFor="lname">Last Name</label>
-                      <input type="text" name="lname" id="lname" />
+                      <input type="text" name="lname" id="lname" required />
                     </div>
                   </div>
 
@@ -55,13 +98,13 @@ function Appointment({ appointmentType, setAppointmentType }) {
                           style={{ width: "9rem" }}
                         />
 
-                        <input type="tel" name="phone" id="phone" />
+                        <input type="tel" name="phone" id="phone" required />
                       </div>
                     </div>
 
                     <div className="email">
                       <label htmlFor="email">Email</label>
-                      <input type="email" name="email" id="email" />
+                      <input type="email" name="email" id="email" required />
                     </div>
                   </div>
 
@@ -72,6 +115,7 @@ function Appointment({ appointmentType, setAppointmentType }) {
                         name="appointmentType"
                         id="appointmentType"
                         value={appointmentType}
+                        required
                         onChange={(e) => setAppointmentType(e.target.value)}>
                         <option value="Tattoos">Tattoos</option>
                         <option value="Piercings">Piercings</option>
@@ -80,7 +124,7 @@ function Appointment({ appointmentType, setAppointmentType }) {
 
                     <div className="placement">
                       <label htmlFor="placement">Placement</label>
-                      <select name="placement" id="placement">
+                      <select name="placement" id="placement" required>
                         {appointmentType === "Tattoos"
                           ? tattooOptions.map((option) => (
                               <option key={option} value={option}>
@@ -103,6 +147,7 @@ function Appointment({ appointmentType, setAppointmentType }) {
                         type="date"
                         name="preferredDate"
                         id="preferredDate"
+                        required
                       />
                     </div>
 
@@ -112,12 +157,13 @@ function Appointment({ appointmentType, setAppointmentType }) {
                         type="time"
                         name="preferredTime"
                         id="preferredTime"
+                        required
                       />
                     </div>
 
                     <div className="artist">
                       <label htmlFor="artist">Artist</label>
-                      <select name="artist" id="artist">
+                      <select name="artist" id="artist" required>
                         {artist
                           .filter((option) =>
                             appointmentType === "Piercings"
@@ -146,13 +192,16 @@ function Appointment({ appointmentType, setAppointmentType }) {
                         type="text"
                         name="skinConcition"
                         id="skinConcition"
+                        required
                       />
                     </div>
                   </div>
 
                   <div className="clientDetails">
                     <div className="reference">
-                      <label htmlFor="reference">Link to reference image</label>
+                      <label htmlFor="reference">
+                        Link to reference image :<span> If any</span>
+                      </label>
                       <input type="text" name="reference" id="reference" />
                     </div>
                   </div>
