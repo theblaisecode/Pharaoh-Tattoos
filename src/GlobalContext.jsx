@@ -51,7 +51,7 @@ function GlobalContext({ children }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 550) {
         setBackToTop(true);
       } else {
         setBackToTop(false);
