@@ -1557,4 +1557,28 @@ Error generating stack: `+o.message+`
     padding: 1rem 0.5rem;
     font-size: 1.5rem;
   }
+
+  @media (min-width: 551px) and (max-width: 950px) {
+    bottom: 12rem;
+    padding: 1.2rem 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: 951px) and (max-width: 1200px) {
+    bottom: 12rem;
+    right: 3rem;
+    padding: 1.2rem 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1201px) and (max-width: 1440px) {
+    bottom: 12rem;
+    right: 2.5rem;
+    padding: 1.2rem 0.5rem;
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: 1441px) and (max-width: 1628px) {
+    bottom: 12rem;
+  }
 `;function vE({backToTop:e,scrollToTop:t}){return g.jsx(gE,{onClick:t,visible:e,children:g.jsx(Gw,{})})}function yE(){const{backToTop:e,scrollToTop:t}=Yg(),n=new Date;return console.log(n.getFullYear()),g.jsxs(g.Fragment,{children:[g.jsx(mE,{}),g.jsx(vE,{backToTop:e,scrollToTop:t}),g.jsx(Zy,{}),g.jsx(hE,{}),g.jsx("footer",{id:"subFooter",children:g.jsx("div",{className:"container",children:g.jsxs("div",{className:"subFooterContent",children:[g.jsxs("span",{children:["© ",g.jsx("span",{id:"year",children:n.getFullYear()})," Pharaoh Tattoos"]}),g.jsxs("div",{className:"authors",children:[g.jsxs("span",{children:["Designer: TeddyTheCreator",g.jsx("br",{}),"Twitter:",g.jsx("a",{href:"https://x.com/Teddy_016",target:"_blank",children:"@Teddy_016"})]}),g.jsx("span",{className:"divide"}),g.jsxs("span",{children:["Developer: TheBlaiseCode",g.jsx("br",{}),"Twitter:",g.jsx("a",{href:"https://x.com/theblaisecode",target:"_blank",children:"@theblaisecode"})]})]})]})})})]})}function wE(){const{isToggle:e,toggleQuestion:t,isModal:n,toggleModal:r,imgModal:i,toggleImgModal:o,appointmentType:a,setAppointmentType:l}=Yg(),s=mw([{path:"/",element:g.jsx(yE,{}),children:[{index:!0,element:g.jsx(sC,{isToggle:e,toggleQuestion:t})},{path:"gallery",element:g.jsx(rE,{isModal:n,toggleModal:r,imgModal:i,toggleImgModal:o})},{path:"aftercare",element:g.jsx(sE,{})},{path:"contact",element:g.jsx(uE,{})},{path:"appointment",element:g.jsx(fE,{appointmentType:a,setAppointmentType:l})}]}],{basename:"/Pharaoh-Tattoos"});return g.jsx(Cw,{router:s})}Lh(document.getElementById("root")).render(g.jsxs(pE,{children:[g.jsx(XC,{position:"top-right",autoClose:2e3,theme:"colored"}),g.jsx(wE,{})]}));
