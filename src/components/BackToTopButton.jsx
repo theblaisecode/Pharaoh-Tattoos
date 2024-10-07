@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const BtnStyling = styled.button`
   position: fixed;
-  bottom: 5rem;
+  bottom: 12rem;
   right: 5rem;
   display: flex;
   justify-content: center;
