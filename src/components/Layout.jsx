@@ -1,14 +1,18 @@
 import Nav from "./Nav";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
+import BackToTopButton from "./BackToTopButton";
+import { useGlobalContext } from "../GlobalContext";
 
 function Layout() {
+  const {backToTop, scrollToTop} = useGlobalContext()
   const thisYear = new Date();
 
   console.log(thisYear.getFullYear());
   return (
     <>
       <Nav />
+      <BackToTopButton backToTop={backToTop} scrollToTop={scrollToTop} />
       <Outlet />
       <Footer />
 

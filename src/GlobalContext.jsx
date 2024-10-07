@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const GlobalUsage = createContext();
 
@@ -11,6 +11,7 @@ function GlobalContext({ children }) {
   const [isModal, setIsModal] = useState(false);
   const [imgModal, setImgModal] = useState(false);
   const [appointmentType, setAppointmentType] = useState("Tattoos");
+  const [backToTop, setBackToTop] = useState(false);
 
   // Function to toggle FAQ questions by ID
   function toggleQuestion(id) {
@@ -40,6 +41,27 @@ function GlobalContext({ children }) {
     console.log("Form submitted:", submission);
   };
 
+  // Function to handle appointment form submission
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setBackToTop(true);
+      } else {
+        setBackToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <GlobalUsage.Provider
       value={{
@@ -52,6 +74,8 @@ function GlobalContext({ children }) {
         bookAppointment,
         appointmentType,
         setAppointmentType,
+        backToTop,
+        scrollToTop,
       }}>
       {children}
     </GlobalUsage.Provider>
