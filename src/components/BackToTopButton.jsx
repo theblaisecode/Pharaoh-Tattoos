@@ -18,7 +18,6 @@ const BtnStyling = styled.button`
   opacity: ${(props) => (props.visible ? "1" : "0")};
   pointer-events: ${(props) => (props.visible ? "auto" : "none")};
   transition: opacity 0.4s ease, pointer-events 0.4s ease;
-  /* transition: opacity 0.4s ease; */
 `;
 
 function BackToTopButton({ backToTop, scrollToTop }) {

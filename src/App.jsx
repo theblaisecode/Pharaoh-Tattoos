@@ -15,7 +15,6 @@ function App() {
     toggleModal,
     imgModal,
     toggleImgModal,
-    bookAppointment,
     appointmentType,
     setAppointmentType,
   } = useGlobalContext();
