@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Pharaoh-Tattoos",
+  // base: "/Pharaoh-Tattoos",
   build: {
     outDir: "dist", // Explicitly specify the output directory
   },
