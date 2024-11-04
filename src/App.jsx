@@ -62,7 +62,7 @@ function App() {
         ],
       },
     ],
-    // { basename: "/Pharaoh-Tattoos" }
+    { basename: "/Pharaoh-Tattoos" }
   );
 
   return <RouterProvider router={router} />;
