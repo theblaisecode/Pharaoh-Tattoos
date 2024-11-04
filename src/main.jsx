@@ -11,6 +11,7 @@ import "./style.css";
 createRoot(document.getElementById("root")).render(
   <GlobalContext>
     <ToastContainer position="top-right" autoClose={2000} theme="colored" />
+
     <App />
   </GlobalContext>
 );
