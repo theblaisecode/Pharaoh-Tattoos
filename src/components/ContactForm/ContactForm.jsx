@@ -48,6 +48,7 @@ function ContactForm({ sectionHead, sectionDescription }) {
                     required
                   />
                 </div>
+                
                 <div className="email">
                   <IoMail />
                   <input
