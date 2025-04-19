@@ -242,6 +242,7 @@ nav a.activeStyle::after {
 .btn span svg {
   color: var(--textLight);
 }
+
 /* -------- Mobile Nav -------- */
 .mobileNav {
   display: none;
